@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Accessibility</string>
+    <string name="accessibility_service_description">Monitoring the click event to identify the risks</string>
 </resources>
