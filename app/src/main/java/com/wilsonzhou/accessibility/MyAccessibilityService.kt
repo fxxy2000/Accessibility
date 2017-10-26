@@ -1,14 +1,30 @@
 package com.wilsonzhou.accessibility
 
 import android.accessibilityservice.AccessibilityService
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
 import android.os.Build
-import android.support.annotation.RequiresApi
+import android.support.v4.content.LocalBroadcastManager
+import android.text.TextUtils
 import android.util.Log
 import android.view.accessibility.AccessibilityEvent
+import android.view.accessibility.AccessibilityNodeInfo
 
 class MyAccessibilityService : AccessibilityService() {
 
+    private var isBlocked = false
+    private var receiver : BroadcastReceiver? = null
+
+    private var view : FullScreenLayout? = null
+    private var processor : EventProcessor? = null
+
     override fun onAccessibilityEvent(event: AccessibilityEvent) {
+        if (isBlocked && view == null && processor != null) {
+            view = FullScreenLayout(this)
+            view?.init()
+        }
         val sb = StringBuilder()
         when (event.eventType) {
             /**
@@ -160,8 +176,10 @@ class MyAccessibilityService : AccessibilityService() {
                 sb.append("eventType:"+event.eventType+"\n")
                 sb.append("eventTime:"+event.eventTime+"\n")
                 if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT_WATCH) {
-                    val windowInfo = event.source.window
-                    sb.append("window:"+windowInfo.toString()+"\n")
+                    if (event.source != null) {
+                        val windowInfo = event.source.window
+                        sb.append("window:"+windowInfo.toString()+"\n")
+                    }
                 }
                 sb.append("====TYPE_WINDOWS_CHANGED_FOOT===\n")
             }
@@ -259,11 +277,83 @@ class MyAccessibilityService : AccessibilityService() {
             }
         }
         Log.i(TAG, sb.toString())
+        // process event
+        if (processor != null) {
+            processor!!.process(event)
+        }
+    }
+
+    private fun resetState() {
+        isBlocked = false
+    }
+
+    private fun startMainActivity() {
+        val intent = Intent(this, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
     }
 
     override fun onServiceConnected() {
         super.onServiceConnected()
         Log.i(TAG, "onServiceConnected")
+
+        if (receiver == null) {
+            receiver = object: BroadcastReceiver() {
+                override fun onReceive(context: Context?, intent: Intent?) {
+                    if (intent?.action == "action_start") {
+                        val processorName = intent.getStringExtra("processorName")
+                        if (!TextUtils.isEmpty(processorName)) {
+                            when(processorName) {
+                                "TurnOnStayAwake" -> {
+                                    processor = TurnOnStayAwake(context!!)
+                                }
+                                "UninstallApplication" -> {
+                                    processor = UninstallApplication(context!!)
+                                }
+                            }
+                            processor!!.init()
+                        }
+                    } else if(intent?.action == "action_block") {
+                        isBlocked = intent.getBooleanExtra("isBlocked", false)
+                    }else if (intent?.action == "destroy_view") {
+                        processor = null
+                        resetState()
+                        startMainActivity()
+                        if (view != null) {
+                            view?.postDelayed({
+                                view?.destroy()
+                                view = null
+                            }, 1000)
+                        }
+                    }
+                }
+            }
+            val filter = IntentFilter()
+            filter.addAction("action_start")
+            filter.addAction("action_block")
+            filter.addAction("destroy_view")
+            LocalBroadcastManager.getInstance(this).registerReceiver(receiver, filter)
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        resetState()
+        startMainActivity()
+        processor = null
+
+        if (receiver != null) {
+            LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver)
+            receiver = null
+        }
+
+        if (view != null) {
+            view?.postDelayed({
+                view?.destroy()
+                view = null
+            }, 1000)
+        }
     }
 
     override fun onInterrupt() {
@@ -271,7 +361,14 @@ class MyAccessibilityService : AccessibilityService() {
     }
 
     companion object {
-        internal val TAG = "MyAccessibilityService"
-        internal fun init() {}
+        private val TAG = "MyAccessibilityService"
+        internal fun scrollList(event: AccessibilityEvent) {
+            val list = event.source.findAccessibilityNodeInfosByViewId("android:id/list")
+            if (list.isEmpty()) {
+                // if list view is not found, doNothing
+                return
+            }
+            list[0].performAction(AccessibilityNodeInfo.ACTION_SCROLL_FORWARD)
+        }
     }
 }

@@ -1,0 +1,257 @@
+Click on settings
+10-20 17:14:50.260 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_VIEW_CLICKED_HEAD===
+                                                                                    eventType:1
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@d9aa; boundsInParent: Rect(0, 0 - 194, 242); boundsInScreen: Rect(865, 1245 - 1059, 1487); packageName: com.android.launcher; className: android.widget.TextView; text: Settings; contentDescription: null; viewIdResName: null; checkable: false; checked: false; focusable: true; focused: false; selected: false; clickable: true; longClickable: true; enabled: true; password: false; scrollable: false; [ACTION_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_LONG_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+                                                                                    className:android.widget.TextView
+                                                                                    packageName:com.android.launcher
+                                                                                    eventTime:1389156
+                                                                                    text:[Settings]
+                                                                                    isEnabled:true
+                                                                                    isPassword:false
+                                                                                    isChecked:false
+                                                                                    contentDesc:null
+                                                                                    scrollX:-1
+                                                                                    scrollY:-1
+                                                                                    fromIndex:-1
+                                                                                    toIndex:-1
+                                                                                    itemCount:-1
+                                                                                    ====TYPE_VIEW_CLICKED_FOOT===
+10-20 17:14:50.710 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_WINDOW_STATE_CHANGED_HEAD===
+                                                                                    eventType:32
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@26b5d; boundsInParent: Rect(0, 0 - 1080, 1794); boundsInScreen: Rect(0, 0 - 1080, 1794); packageName: com.android.settings; className: android.widget.FrameLayout; text: null; contentDescription: null; viewIdResName: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_ACCESSIBILITY_FOCUS]
+                                                                                    className:com.android.settings.Settings
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1389584
+                                                                                    text:[Settings]
+                                                                                    isEnabled:true
+                                                                                    ====TYPE_WINDOW_STATE_CHANGED_FOOT===
+10-20 17:14:50.830 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_WINDOW_CONTENT_CHANGED_HEAD===
+                                                                                    eventType:2048
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@27a61; boundsInParent: Rect(0, 0 - 1080, 1602); boundsInScreen: Rect(0, 192 - 1080, 1794); packageName: com.android.settings; className: android.widget.ListView; text: null; contentDescription: null; viewIdResName: android:id/list; checkable: false; checked: false; focusable: true; focused: true; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: true; [ACTION_CLEAR_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_SCROLL_FORWARD]
+                                                                                    className:android.widget.ListView
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1389718
+                                                                                    contentChangeTypes:1
+                                                                                    ====TYPE_WINDOW_CONTENT_CHANGED_FOOT===
+
+																					
+																					
+
+View Scroll
+10-20 17:15:45.680 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_WINDOW_CONTENT_CHANGED_HEAD===
+                                                                                    eventType:2048
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@281e3; boundsInParent: Rect(0, 0 - 996, 84); boundsInScreen: Rect(42, 1738 - 1038, 1822); packageName: com.android.settings; className: android.widget.TextView; text: Accounts; contentDescription: null; viewIdResName: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; enabled: false; password: false; scrollable: false; [ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+                                                                                    className:android.widget.TextView
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1444586
+                                                                                    contentChangeTypes:1
+                                                                                    ====TYPE_WINDOW_CONTENT_CHANGED_FOOT===
+10-20 17:15:45.730 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_VIEW_SCROLLED_HEAD===
+                                                                                    eventType:4096
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@27a61; boundsInParent: Rect(0, 0 - 1080, 1602); boundsInScreen: Rect(0, 192 - 1080, 1794); packageName: com.android.settings; className: android.widget.ListView; text: null; contentDescription: null; viewIdResName: android:id/list; checkable: false; checked: false; focusable: true; focused: true; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: true; [ACTION_CLEAR_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_SCROLL_FORWARD, ACTION_SCROLL_BACKWARD]
+                                                                                    className:android.widget.ListView
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1444622
+                                                                                    text:[]
+                                                                                    isEnabled:true
+                                                                                    isPassword:false
+                                                                                    isChecked:false
+                                                                                    contentDesc:null
+                                                                                    scrollX:-1
+                                                                                    scrollY:-1
+                                                                                    fromIndex:1
+                                                                                    toIndex:14
+                                                                                    itemCount:22
+                                                                                    ====TYPE_VIEW_SCROLLED_FOOT===
+10-20 17:15:45.960 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_WINDOW_CONTENT_CHANGED_HEAD===
+                                                                                    eventType:2048
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@2c1b4; boundsInParent: Rect(0, 0 - 996, 126); boundsInScreen: Rect(42, 1742 - 1038, 1868); packageName: com.android.settings; className: android.widget.LinearLayout; text: null; contentDescription: null; viewIdResName: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS]
+                                                                                    className:android.widget.LinearLayout
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1444852
+                                                                                    contentChangeTypes:1
+                                                                                    ====TYPE_WINDOW_CONTENT_CHANGED_FOOT===
+10-20 17:15:46.060 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_WINDOW_CONTENT_CHANGED_HEAD===
+                                                                                    eventType:2048
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@28d26; boundsInParent: Rect(0, 0 - 269, 63); boundsInScreen: Rect(153, 1722 - 422, 1785); packageName: com.android.settings; className: android.widget.TextView; text: Add account; contentDescription: null; viewIdResName: android:id/title; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+                                                                                    className:android.widget.TextView
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1444963
+                                                                                    contentChangeTypes:1
+                                                                                    ====TYPE_WINDOW_CONTENT_CHANGED_FOOT===
+10-20 17:15:46.070 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_VIEW_SCROLLED_HEAD===
+                                                                                    eventType:4096
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@27a61; boundsInParent: Rect(0, 0 - 1080, 1602); boundsInScreen: Rect(0, 192 - 1080, 1794); packageName: com.android.settings; className: android.widget.ListView; text: null; contentDescription: null; viewIdResName: android:id/list; checkable: false; checked: false; focusable: true; focused: true; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: true; [ACTION_CLEAR_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_SCROLL_FORWARD, ACTION_SCROLL_BACKWARD]
+                                                                                    className:android.widget.ListView
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1444964
+                                                                                    text:[]
+                                                                                    isEnabled:true
+                                                                                    isPassword:false
+                                                                                    isChecked:false
+                                                                                    contentDesc:null
+                                                                                    scrollX:-1
+                                                                                    scrollY:-1
+                                                                                    fromIndex:2
+                                                                                    toIndex:15
+                                                                                    itemCount:22
+                                                                                    ====TYPE_VIEW_SCROLLED_FOOT===
+10-20 17:15:46.290 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_WINDOW_CONTENT_CHANGED_HEAD===
+                                                                                    eventType:2048
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@27a61; boundsInParent: Rect(0, 0 - 1080, 1602); boundsInScreen: Rect(0, 192 - 1080, 1794); packageName: com.android.settings; className: android.widget.ListView; text: null; contentDescription: null; viewIdResName: android:id/list; checkable: false; checked: false; focusable: true; focused: true; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: true; [ACTION_CLEAR_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_SCROLL_FORWARD, ACTION_SCROLL_BACKWARD]
+                                                                                    className:android.widget.ListView
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1445189
+                                                                                    contentChangeTypes:1
+                                                                                    ====TYPE_WINDOW_CONTENT_CHANGED_FOOT===
+10-20 17:15:46.300 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_VIEW_SCROLLED_HEAD===
+                                                                                    eventType:4096
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@27a61; boundsInParent: Rect(0, 0 - 1080, 1602); boundsInScreen: Rect(0, 192 - 1080, 1794); packageName: com.android.settings; className: android.widget.ListView; text: null; contentDescription: null; viewIdResName: android:id/list; checkable: false; checked: false; focusable: true; focused: true; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: true; [ACTION_CLEAR_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_SCROLL_FORWARD, ACTION_SCROLL_BACKWARD]
+                                                                                    className:android.widget.ListView
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1445189
+                                                                                    text:[]
+                                                                                    isEnabled:true
+                                                                                    isPassword:false
+                                                                                    isChecked:false
+                                                                                    contentDesc:null
+                                                                                    scrollX:-1
+                                                                                    scrollY:-1
+                                                                                    fromIndex:3
+                                                                                    toIndex:17
+                                                                                    itemCount:22
+                                                                                    ====TYPE_VIEW_SCROLLED_FOOT===
+10-20 17:15:47.490 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_VIEW_SCROLLED_HEAD===
+                                                                                    eventType:4096
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@27a61; boundsInParent: Rect(0, 0 - 1080, 1602); boundsInScreen: Rect(0, 192 - 1080, 1794); packageName: com.android.settings; className: android.widget.ListView; text: null; contentDescription: null; viewIdResName: android:id/list; checkable: false; checked: false; focusable: true; focused: true; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: true; [ACTION_CLEAR_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_SCROLL_BACKWARD]
+                                                                                    className:android.widget.ListView
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1446372
+                                                                                    text:[]
+                                                                                    isEnabled:true
+                                                                                    isPassword:false
+                                                                                    isChecked:false
+                                                                                    contentDesc:null
+                                                                                    scrollX:-1
+                                                                                    scrollY:-1
+                                                                                    fromIndex:6
+                                                                                    toIndex:19
+                                                                                    itemCount:22
+                                                                                    ====TYPE_VIEW_SCROLLED_FOOT===
+10-20 17:15:47.620 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_VIEW_SCROLLED_HEAD===
+                                                                                    eventType:4096
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@27a61; boundsInParent: Rect(0, 0 - 1080, 1602); boundsInScreen: Rect(0, 192 - 1080, 1794); packageName: com.android.settings; className: android.widget.ListView; text: null; contentDescription: null; viewIdResName: android:id/list; checkable: false; checked: false; focusable: true; focused: true; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: true; [ACTION_CLEAR_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_SCROLL_BACKWARD]
+                                                                                    className:android.widget.ListView
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1446506
+                                                                                    text:[]
+                                                                                    isEnabled:true
+                                                                                    isPassword:false
+                                                                                    isChecked:false
+                                                                                    contentDesc:null
+                                                                                    scrollX:-1
+                                                                                    scrollY:-1
+                                                                                    fromIndex:8
+                                                                                    toIndex:21
+                                                                                    itemCount:22
+                                                                                    ====TYPE_VIEW_SCROLLED_FOOT===
+10-20 17:15:47.650 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_WINDOW_CONTENT_CHANGED_HEAD===
+                                                                                    eventType:2048
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@2c575; boundsInParent: Rect(0, 0 - 996, 126); boundsInScreen: Rect(42, 1668 - 1038, 1794); packageName: com.android.settings; className: android.widget.LinearLayout; text: null; contentDescription: null; viewIdResName: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS]
+                                                                                    className:android.widget.LinearLayout
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1446539
+                                                                                    contentChangeTypes:1
+                                                                                    ====TYPE_WINDOW_CONTENT_CHANGED_FOOT===
+
+																					
+															
+
+Click on Developer Option
+10-20 17:16:34.660 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_VIEW_CLICKED_HEAD===
+                                                                                    eventType:1
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@2c936; boundsInParent: Rect(0, 0 - 996, 126); boundsInScreen: Rect(42, 1539 - 1038, 1665); packageName: com.android.settings; className: android.widget.LinearLayout; text: null; contentDescription: null; viewIdResName: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS]
+                                                                                    className:android.widget.LinearLayout
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1493559
+                                                                                    text:[Developer options]
+                                                                                    isEnabled:true
+                                                                                    isPassword:false
+                                                                                    isChecked:false
+                                                                                    contentDesc:null
+                                                                                    scrollX:-1
+                                                                                    scrollY:-1
+                                                                                    fromIndex:-1
+                                                                                    toIndex:-1
+                                                                                    itemCount:-1
+                                                                                    ====TYPE_VIEW_CLICKED_FOOT===
+10-20 17:16:35.050 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_WINDOW_STATE_CHANGED_HEAD===
+                                                                                    eventType:32
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@55a27; boundsInParent: Rect(0, 0 - 1080, 1794); boundsInScreen: Rect(0, 0 - 1080, 1794); packageName: com.android.settings; className: android.widget.FrameLayout; text: null; contentDescription: null; viewIdResName: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_ACCESSIBILITY_FOCUS]
+                                                                                    className:com.android.settings.SubSettings
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1493918
+                                                                                    text:[Developer options]
+                                                                                    isEnabled:true
+                                                                                    ====TYPE_WINDOW_STATE_CHANGED_FOOT===
+10-20 17:16:35.130 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_VIEW_SCROLLED_HEAD===
+                                                                                    eventType:4096
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@570ad; boundsInParent: Rect(0, 0 - 1080, 1602); boundsInScreen: Rect(0, 192 - 1080, 1794); packageName: com.android.settings; className: android.widget.ListView; text: null; contentDescription: null; viewIdResName: android:id/list; checkable: false; checked: false; focusable: true; focused: true; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: true; [ACTION_CLEAR_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_SCROLL_FORWARD]
+                                                                                    className:android.widget.ListView
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1494018
+                                                                                    text:[]
+                                                                                    isEnabled:true
+                                                                                    isPassword:false
+                                                                                    isChecked:false
+                                                                                    contentDesc:null
+                                                                                    scrollX:-1
+                                                                                    scrollY:-1
+                                                                                    fromIndex:0
+                                                                                    toIndex:9
+                                                                                    itemCount:43
+                                                                                    ====TYPE_VIEW_SCROLLED_FOOT===
+10-20 17:16:35.240 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_WINDOW_CONTENT_CHANGED_HEAD===
+                                                                                    eventType:2048
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@570ad; boundsInParent: Rect(0, 0 - 1080, 1602); boundsInScreen: Rect(0, 192 - 1080, 1794); packageName: com.android.settings; className: android.widget.ListView; text: null; contentDescription: null; viewIdResName: android:id/list; checkable: false; checked: false; focusable: true; focused: true; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: true; [ACTION_CLEAR_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_SCROLL_FORWARD]
+                                                                                    className:android.widget.ListView
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1494132
+                                                                                    contentChangeTypes:1
+                                                                                    ====TYPE_WINDOW_CONTENT_CHANGED_FOOT===
+
+																					
+Allow Mock location
+10-20 17:17:08.520 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_WINDOW_CONTENT_CHANGED_HEAD===
+                                                                                    eventType:2048
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@570ad; boundsInParent: Rect(0, 0 - 1080, 1602); boundsInScreen: Rect(0, 192 - 1080, 1794); packageName: com.android.settings; className: android.widget.ListView; text: null; contentDescription: null; viewIdResName: android:id/list; checkable: false; checked: false; focusable: true; focused: true; selected: false; clickable: true; longClickable: false; enabled: true; password: false; scrollable: true; [ACTION_CLEAR_FOCUS, ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_CLICK, ACTION_ACCESSIBILITY_FOCUS, ACTION_SCROLL_FORWARD, ACTION_SCROLL_BACKWARD]
+                                                                                    className:android.widget.ListView
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1527421
+                                                                                    contentChangeTypes:1
+                                                                                    ====TYPE_WINDOW_CONTENT_CHANGED_FOOT===
+10-20 17:17:08.530 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_VIEW_CLICKED_HEAD===
+                                                                                    eventType:1
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@6211c; boundsInParent: Rect(0, 0 - 84, 84); boundsInScreen: Rect(907, 1412 - 991, 1496); packageName: com.android.settings; className: android.widget.CheckBox; text: null; contentDescription: null; viewIdResName: android:id/checkbox; checkable: true; checked: true; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; enabled: true; password: false; scrollable: false; [ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_ACCESSIBILITY_FOCUS]
+                                                                                    className:android.widget.CheckBox
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1527429
+                                                                                    text:[]
+                                                                                    isEnabled:true
+                                                                                    isPassword:false
+                                                                                    isChecked:true
+                                                                                    contentDesc:null
+                                                                                    scrollX:-1
+                                                                                    scrollY:-1
+                                                                                    fromIndex:-1
+                                                                                    toIndex:-1
+                                                                                    itemCount:-1
+                                                                                    ====TYPE_VIEW_CLICKED_FOOT===
+10-20 17:17:08.640 3169-3169/com.wilsonzhou.accessibility I/MyAccessibilityService: ====TYPE_WINDOW_CONTENT_CHANGED_HEAD===
+                                                                                    eventType:2048
+                                                                                    source:android.view.accessibility.AccessibilityNodeInfo@6cdca; boundsInParent: Rect(0, 0 - 802, 94); boundsInScreen: Rect(63, 1791 - 865, 1885); packageName: com.android.settings; className: android.widget.TextView; text: Debugged application waits for debugger to attach before executing; contentDescription: null; viewIdResName: android:id/summary; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; enabled: false; password: false; scrollable: false; [ACTION_SELECT, ACTION_CLEAR_SELECTION, ACTION_ACCESSIBILITY_FOCUS, ACTION_NEXT_AT_MOVEMENT_GRANULARITY, ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY, ACTION_SET_SELECTION]
+                                                                                    className:android.widget.TextView
+                                                                                    packageName:com.android.settings
+                                                                                    eventTime:1527535
+                                                                                    contentChangeTypes:2
+                                                                                    ====TYPE_WINDOW_CONTENT_CHANGED_FOOT===
