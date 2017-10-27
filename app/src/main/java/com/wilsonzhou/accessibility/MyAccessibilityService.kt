@@ -21,7 +21,7 @@ class MyAccessibilityService : AccessibilityService() {
     private var processor : EventProcessor? = null
 
     override fun onAccessibilityEvent(event: AccessibilityEvent) {
-        if (isBlocked && view == null && processor != null) {
+        if (isBlocked && view == null && processor != null && processor!!.isReady()) {
             view = FullScreenLayout(this)
             view?.init()
         }
@@ -314,15 +314,29 @@ class MyAccessibilityService : AccessibilityService() {
                         }
                     } else if(intent?.action == "action_block") {
                         isBlocked = intent.getBooleanExtra("isBlocked", false)
-                    }else if (intent?.action == "destroy_view") {
-                        processor = null
-                        resetState()
-                        startMainActivity()
+                    } else if (intent?.action == "destroy_view") {
+                        if (processor !is AutoUninstall) {
+                            processor = null
+                            resetState()
+                            startMainActivity()
+                        }
+
                         if (view != null) {
                             view?.postDelayed({
                                 view?.destroy()
                                 view = null
                             }, 1000)
+                        }
+                    } else if (intent!!.action == "action_auto_uninstall") {
+                        val isAutoUninstall = intent.getBooleanExtra("isAutoUninstall", false)
+                        if (isAutoUninstall) {
+                            processor = AutoUninstall(context!!)
+                            processor!!.init(true)
+                        } else {
+                            if (processor is AutoUninstall) {
+                                processor!!.destroy()
+                                processor = null
+                            }
                         }
                     }
                 }
@@ -331,6 +345,7 @@ class MyAccessibilityService : AccessibilityService() {
             filter.addAction("action_start")
             filter.addAction("action_block")
             filter.addAction("destroy_view")
+            filter.addAction("action_auto_uninstall")
             LocalBroadcastManager.getInstance(this).registerReceiver(receiver, filter)
         }
     }
@@ -339,7 +354,6 @@ class MyAccessibilityService : AccessibilityService() {
         super.onDestroy()
 
         resetState()
-        startMainActivity()
         processor = null
 
         if (receiver != null) {

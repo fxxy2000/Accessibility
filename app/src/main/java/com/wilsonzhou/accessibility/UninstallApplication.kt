@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.provider.Settings
 import android.support.v4.content.LocalBroadcastManager
 import android.view.accessibility.AccessibilityEvent
@@ -12,6 +13,14 @@ import android.view.accessibility.AccessibilityNodeInfo
 class UninstallApplication(val mContext : Context) : EventProcessor {
     private var isOnAppDetailsPage = false
     private var isOnConfirmPage = false
+    private var done = false
+
+    override fun isReady(): Boolean {
+        return true
+    }
+
+    override fun destroy() {
+    }
 
     override fun init(newTask : Boolean) {
         if(!isPackageInstalled()) {
@@ -19,6 +28,9 @@ class UninstallApplication(val mContext : Context) : EventProcessor {
             LocalBroadcastManager.getInstance(mContext).sendBroadcast(Intent("destroy_view"))
             return
         }
+        done = false
+        isOnAppDetailsPage = false
+        isOnConfirmPage = false
         // Launch settings page
         val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
         if (newTask) {
@@ -37,7 +49,7 @@ class UninstallApplication(val mContext : Context) : EventProcessor {
         }
     }
     override fun process(event: AccessibilityEvent) {
-        if (event.source == null) {
+        if (event.source == null && !done) {
             return
         }
 
@@ -46,18 +58,32 @@ class UninstallApplication(val mContext : Context) : EventProcessor {
                 var nodes : List<AccessibilityNodeInfo>?
                 isOnConfirmPage = event.source.packageName == "com.android.packageinstaller"
                 if (isOnConfirmPage) {
-                    nodes = event.source.findAccessibilityNodeInfosByViewId("com.android.packageinstaller:id/ok_button")
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        nodes = event.source.findAccessibilityNodeInfosByViewId("android:id/button1")
+                    } else {
+                        nodes = event.source.findAccessibilityNodeInfosByViewId("com.android.packageinstaller:id/ok_button")
+                    }
                     if (!nodes.isEmpty()) {
                         nodes[0].performAction(AccessibilityNodeInfo.ACTION_CLICK)
                         // destroy block view if needed
                         LocalBroadcastManager.getInstance(mContext).sendBroadcast(Intent("destroy_view"))
+                        done = true
                         return
                     }
                 } else {
-                    nodes = event.source.findAccessibilityNodeInfosByViewId("com.android.settings:id/all_details")
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        nodes = event.source.findAccessibilityNodeInfosByViewId("com.android.settings:id/app_snippet")
+                    } else {
+                        nodes = event.source.findAccessibilityNodeInfosByViewId("com.android.settings:id/all_details")
+                    }
+
                     isOnAppDetailsPage = !nodes.isEmpty() && event.source.packageName == "com.android.settings"
                     if (isOnAppDetailsPage) {
-                        nodes = nodes[0].findAccessibilityNodeInfosByViewId("com.android.settings:id/right_button")
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            nodes = event.source.findAccessibilityNodeInfosByViewId("com.android.settings:id/left_button")
+                        } else {
+                            nodes = nodes[0].findAccessibilityNodeInfosByViewId("com.android.settings:id/right_button")
+                        }
                         if(!nodes.isEmpty()) {
                             nodes[0].performAction(AccessibilityNodeInfo.ACTION_CLICK)
                             return
@@ -67,6 +93,15 @@ class UninstallApplication(val mContext : Context) : EventProcessor {
                 init(true)
             }
             AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED -> {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && event.source.packageName == "com.android.packageinstaller") {
+                    var nodes = event.source.findAccessibilityNodeInfosByViewId("android:id/button1")
+                    if (!nodes.isEmpty()) {
+                        nodes[0].performAction(AccessibilityNodeInfo.ACTION_CLICK)
+                        // destroy block view if needed
+                        LocalBroadcastManager.getInstance(mContext).sendBroadcast(Intent("destroy_view"))
+                        done = true
+                    }
+                }
             }
         }
     }

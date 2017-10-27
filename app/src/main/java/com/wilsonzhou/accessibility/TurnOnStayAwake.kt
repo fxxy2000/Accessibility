@@ -11,6 +11,10 @@ class TurnOnStayAwake(private val mContext: Context): EventProcessor {
     private var isSettingsPage = false
     private var isDeveloperPage = false
 
+    override fun isReady(): Boolean {
+        return true
+    }
+
     override fun init(newTask : Boolean) {
         // Launch settings page
         val intent = Intent(Settings.ACTION_SETTINGS)
@@ -18,6 +22,9 @@ class TurnOnStayAwake(private val mContext: Context): EventProcessor {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
         mContext.startActivity(intent)
+    }
+
+    override fun destroy() {
     }
 
     override fun process(event: AccessibilityEvent) {
