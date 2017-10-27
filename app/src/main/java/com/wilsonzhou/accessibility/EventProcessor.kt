@@ -3,6 +3,6 @@ package com.wilsonzhou.accessibility
 import android.view.accessibility.AccessibilityEvent
 
 internal interface EventProcessor {
-    fun init()
+    fun init(newTask : Boolean)
     fun process(event: AccessibilityEvent)
 }

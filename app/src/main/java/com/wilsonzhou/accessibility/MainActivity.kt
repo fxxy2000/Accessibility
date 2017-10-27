@@ -21,12 +21,14 @@ class MainActivity : Activity() {
             val intent = Intent("action_start")
             intent.putExtra("processorName", "TurnOnStayAwake")
             LocalBroadcastManager.getInstance(this@MainActivity).sendBroadcast(intent)
+            TurnOnStayAwake(this@MainActivity).init(false)
         }
 
         this.action_auto_uninstall_app.setOnClickListener {
             val intent = Intent("action_start")
             intent.putExtra("processorName", "UninstallApplication")
             LocalBroadcastManager.getInstance(this@MainActivity).sendBroadcast(intent)
+            UninstallApplication(this@MainActivity).init(false)
         }
 
         this.action_block.setOnCheckedChangeListener { _: CompoundButton, b: Boolean ->

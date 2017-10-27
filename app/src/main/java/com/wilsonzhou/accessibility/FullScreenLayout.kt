@@ -14,17 +14,11 @@ import android.widget.FrameLayout
 
 class FullScreenLayout(private val mContext: Context) : FrameLayout(mContext) {
     private var mWindowManger: WindowManager? = null
-    private var mView: View? = null
 
     internal fun init() {
         mWindowManger = mContext.getSystemService(Context.WINDOW_SERVICE) as WindowManager
-        mView = LayoutInflater.from(mContext).inflate(R.layout.full_screen, null)
-        mView!!.findViewById<Button>(R.id.btn_cancel).setOnClickListener {
-            Log.i("FullScreenLayout", "Cancel Clicked")
-            LocalBroadcastManager.getInstance(mContext).sendBroadcast(Intent("destroy_view"))
-        }
-        addView(mView)
-
+        val view = LayoutInflater.from(mContext).inflate(R.layout.full_screen, null)
+        addView(view)
         mWindowManger!!.addView(this, windowLayoutParams)
     }
 
@@ -35,7 +29,7 @@ class FullScreenLayout(private val mContext: Context) : FrameLayout(mContext) {
                     WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
                     or WindowManager.LayoutParams.FLAG_FULLSCREEN
                     or WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
-                    or WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM,
+                    or WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                     PixelFormat.TRANSLUCENT)
             params.gravity = Gravity.TOP or Gravity.START
             return params

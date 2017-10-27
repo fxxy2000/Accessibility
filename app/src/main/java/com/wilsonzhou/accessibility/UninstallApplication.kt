@@ -13,7 +13,7 @@ class UninstallApplication(val mContext : Context) : EventProcessor {
     private var isOnAppDetailsPage = false
     private var isOnConfirmPage = false
 
-    override fun init() {
+    override fun init(newTask : Boolean) {
         if(!isPackageInstalled()) {
             // destroy block view if needed
             LocalBroadcastManager.getInstance(mContext).sendBroadcast(Intent("destroy_view"))
@@ -21,8 +21,10 @@ class UninstallApplication(val mContext : Context) : EventProcessor {
         }
         // Launch settings page
         val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+        if (newTask) {
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        }
         intent.data = Uri.parse("package:com.symantec.mobilesecurity")
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         mContext.startActivity(intent)
     }
 
@@ -62,7 +64,7 @@ class UninstallApplication(val mContext : Context) : EventProcessor {
                         }
                     }
                 }
-                init()
+                init(true)
             }
             AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED -> {
             }

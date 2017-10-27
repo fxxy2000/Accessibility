@@ -289,7 +289,7 @@ class MyAccessibilityService : AccessibilityService() {
 
     private fun startMainActivity() {
         val intent = Intent(this, MainActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_TASK_ON_HOME
         startActivity(intent)
     }
 
@@ -311,7 +311,6 @@ class MyAccessibilityService : AccessibilityService() {
                                     processor = UninstallApplication(context!!)
                                 }
                             }
-                            processor!!.init()
                         }
                     } else if(intent?.action == "action_block") {
                         isBlocked = intent.getBooleanExtra("isBlocked", false)
